@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,23 @@
     <script type="text/javascript">
         (function() {
             // ЗАМЕНИТЕ НА ВАШИ PUBLIC KEY, SERVICE ID И TEMPLATE ID ИЗ EMAILJS
-            emailjs.init("ВАШ_PUBLIC_KEY"); // Например, "user_AbCdEfGh123456"
-            const SERVICE_ID = "ВАШ_SERVICE_ID"; // Например, "service_abcdef"
-            const TEMPLATE_ID = "ВАШ_TEMPLATE_ID"; // Например, "template_ghijkl"
+            // --- БЛОК КОНФИГУРАЦИИ EMAILJS ---
+            // Инструкцию по получению ключей можно найти здесь: https://www.emailjs.com/docs/sdk/installation/
+            const EMAILJS_PUBLIC_KEY = "ВАШ_PUBLIC_KEY"; // (Строка) Ваш Public Key, например, "user_..." или "p_..."
+            const EMAILJS_SERVICE_ID = "ВАШ_SERVICE_ID"; // (Строка) Ваш Service ID, например, "service_..."
+            const EMAILJS_TEMPLATE_ID = "ВАШ_TEMPLATE_ID"; // (Строка) Ваш Template ID, например, "template_..."
+            
+            if (EMAILJS_PUBLIC_KEY === "ВАШ_PUBLIC_KEY") {
+                 console.error("ОШИБКА: EmailJS ключи не настроены. Пожалуйста, замените заполнители в HTML-коде на ваши реальные ключи.");
+            } else {
+                 emailjs.init(EMAILJS_PUBLIC_KEY);
+            }
+            
+            // Делаем конфигурацию доступной глобально для функции отправки
+            window.emailConfig = {
+                serviceId: EMAILJS_SERVICE_ID,
+                templateId: EMAILJS_TEMPLATE_ID
+            };
         })();
     </script>
     <style>
@@ -45,7 +59,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             box-sizing: border-box;
             text-align: center;
-            margin-top: 50px; /* Отступ для мобильного статус-бара */
         }
 
         /* Стили для Логотипа */
@@ -228,7 +241,7 @@
         <div id="welcomeScreen">
             <!-- ВСТАВЛЕННЫЙ ЛОГОТИП -->
             <div class="logo-container">
-                <img src="image_2.png" alt="Study English with Julia Semikolenova Logo">
+                 <img src="image_6.png" alt="Study English with Julia Semikolenova Logo">
             </div>
 
             <h1>Level Test</h1>
@@ -278,7 +291,7 @@
         <!-- ЭКРАН 3: ЗАВЕРШЕНИЕ (Скрыт по умолчанию) -->
         <div id="summaryScreen" class="hidden summary-screen">
              <div class="logo-container">
-                 <img src="image_2.png" alt="Study English with Julia Semikolenova Logo">
+                <img src="image_6.png" alt="Study English with Julia Semikolenova Logo">
             </div>
             <h1>Well done! See you soon.</h1>
             <p>Your results have been sent to the teacher.</p>
@@ -429,39 +442,3 @@
                 question: "If James _____________ this book, he will give it back.",
                 type: "choice",
                 options: ["would find", "will find", "finds", "find"],
-                answer: "finds",
-                points: 2
-            },
-             {
-                id: 19,
-                question: "I don’t like loud music. Neither _______ he.",
-                type: "choice",
-                options: ["does", "doesn't", "do", "don't"],
-                answer: "does",
-                points: 2
-            },
-            {
-                id: 20,
-                question: "(Он умеет играть на гитаре.) He _______  play the guitar.",
-                type: "open",
-                answer: "can",
-                points: 1
-            },
-            {
-                id: 21,
-                question: "(Она должна быть на уроке.)  She _______  be at the lesson.",
-                type: "open",
-                answer: "must|should",
-                points: 1
-            },
-            {
-                id: 22,
-                question: "(Кто написал это письмо?)  Who _______   this letter?",
-                type: "open",
-                answer: "wrote",
-                points: 1
-            },
-             {
-                id: 23
-
-                
