@@ -1,307 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Level Test (Базовый Уровневый Тест)</title>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-(function(){
-emailjs.init({ publicKey: "wUvPcf2cg6h-wiH75" });
-})();
-</script>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-.card { background: #ffffff; max-width: 650px; width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 32px; border: 1px solid #e2e8f0; }
-.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; gap: 15px; flex-wrap: wrap; }
-.timer { background: #fffbeb; border: 1px solid #fde68a; color: #b45309; padding: 8px 16px; border-radius: 12px; font-weight: bold; font-size: 18px; font-family: monospace; }
-.btn { background: #4f46e5; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 10px; }
-.btn:hover { background: #4338ca; }
-.btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.input-field { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 15px; margin-top: 6px; margin-bottom: 16px; box-sizing: border-box; }
-.option-btn { width: 100%; text-align: left; padding: 14px 16px; border: 1px solid #cbd5e1; border-radius: 10px; background: white; font-size: 15px; cursor: pointer; margin-bottom: 10px; transition: all 0.2s; box-sizing: border-box; }
-.option-btn:hover { border-color: #4f46e5; background: #e0e7ff; }
-.option-btn.selected { border-color: #4f46e5; background: #e0e7ff; color: #312e81; font-weight: 600; }
-.hidden { display: none !important; }
-.section-title { font-size: 13px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; z-index: 1000; }
-.modal-card { background: white; padding: 24px; border-radius: 14px; max-width: 380px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Test (Базовый Уровневый Тест)</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({ publicKey: "wUvPcf2cg6h-wiH75" });
+    })();
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+    .card { background: #ffffff; max-width: 650px; width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 32px; border: 1px solid #e2e8f0; }
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; gap: 15px; flex-wrap: wrap; }
+    .timer { background: #fffbeb; border: 1px solid #fde68a; color: #b45309; padding: 8px 16px; border-radius: 12px; font-weight: bold; font-size: 18px; font-family: monospace; }
+    .btn { background: #4f46e5; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 10px; }
+    .btn:hover { background: #4338ca; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .input-field { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 15px; margin-top: 6px; margin-bottom: 16px; box-sizing: border-box; }
+    .option-btn { width: 100%; text-align: left; padding: 14px 16px; border: 1px solid #cbd5e1; border-radius: 10px; background: white; font-size: 15px; cursor: pointer; margin-bottom: 10px; transition: all 0.2s; box-sizing: border-box; }
+    .option-btn:hover { border-color: #4f46e5; background: #e0e7ff; }
+    .option-btn.selected { border-color: #4f46e5; background: #e0e7ff; color: #312e81; font-weight: 600; }
+    .hidden { display: none !important; }
+    .section-title { font-size: 13px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+    .modal-card { background: white; padding: 24px; border-radius: 14px; max-width: 380px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center; }
+  </style>
 </head>
 <body>
-<div class="card">
-<div class="header">
-<div>
-<h1 style="margin: 0; font-size: 22px;">Level Test (Базовый Уровневый Тест)</h1>
-<p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Vocabulary & Grammar assessment (46 Questions).</p>
-</div>
-<div class="timer" id="time-display">30:00</div>
-</div>
-<div id="candidate-form-container">
-<h2 style="font-size: 18px; margin-top: 0;">Enter Your Details</h2>
-<p style="color: #64748b; font-size: 14px; margin-bottom: 16px;">Please fill in your details before beginning the test.</p>
-<label style="font-size: 14px; font-weight: 500; display: block;">Your Full Name *</label>
-<input type="text" id="candidate-name" class="input-field" placeholder="e.g. John Doe">
-<label style="font-size: 14px; font-weight: 500; display: block;">Your Email *</label>
-<input type="email" id="candidate-email" class="input-field" placeholder="e.g. student@example.com">
-<label style="font-size: 14px; font-weight: 500; display: block;">Phone Number / WhatsApp / Telegram</label>
-<input type="text" id="candidate-phone" class="input-field" placeholder="e.g. +7 999 123-45-67 or @username">
-<label style="font-size: 14px; font-weight: 500; display: block;">Current English Learning Goal / Comments</label>
-<input type="text" id="candidate-goal" class="input-field" placeholder="e.g. Speaking, Work, Exam preparation">
-<button id="start-test-btn" class="btn" type="button">Start Test (30 Mins)</button>
-</div>
-<div id="quiz-container" class="hidden">
-<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #4f46e5; margin-bottom: 8px; text-transform: uppercase;">
-<span id="question-counter">Question 1 of 46</span>
-<span id="question-points" style="color: #d97706;">1 Point</span>
-</div>
-<div id="section-badge" class="section-title">Vocabulary Section</div>
-<h2 id="question-text" style="font-size: 18px; margin-bottom: 20px;">Loading question...</h2>
-<div id="options-list"></div>
-<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px; flex-wrap: wrap; gap: 10px;">
-<button id="skip-btn" type="button" style="background: none; border: none; color: #64748b; font-weight: 600; cursor: pointer; font-size: 14px; padding: 0;">Skip the question (Пропустить вопрос)</button>
-<button id="next-btn" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;" disabled>Next Question</button>
-</div>
-</div>
-<div id="results-container" class="hidden" style="text-align: center; padding: 20px 0;">
-<div style="font-size: 50px; margin-bottom: 15px;">🎉</div>
-<h2 style="margin-top: 0; font-size: 24px; color: #1e293b;">Well done! See you soon.</h2>
-<p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
-Your test has been successfully submitted.
-Thank you for taking the assessment!
-</p>
-<div id="email-status" style="font-size: 13px; color: #6366f1; margin-bottom: 20px;">Submitting results...</div>
-</div>
-</div>
-<div id="custom-modal" class="modal-overlay hidden">
-<div class="modal-card">
-<h3 id="modal-title" style="margin-top: 0; color: #1e293b; font-size: 18px;">Notice</h3>
-<p id="modal-message" style="color: #64748b; font-size: 14px; margin-bottom: 20px;"></p>
-<button id="modal-close-btn" class="btn" style="margin-top: 0;">OK</button>
-</div>
-</div>
-<script>
-const quizData = {
-"questions": [
-{ "section": "Vocabulary Section", "question": "My son goes to school. He is ____ years old.", "points": 1, "answerOptions": [{ "text": "thirty", "isCorrect": false }, { "text": "twenty", "isCorrect": false }, { "text": "thirteen", "isCorrect": true }, { "text": "eighty", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "I always go to the cinema ____ Fridays.", "points": 1, "answerOptions": [{ "text": "in", "isCorrect": false }, { "text": "on", "isCorrect": true }, { "text": "at", "isCorrect": false }, { "text": "of", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "It's ____ to sleep seven or eight hours, but some people sleep more.", "points": 1, "answerOptions": [{ "text": "less", "isCorrect": false }, { "text": "more", "isCorrect": false }, { "text": "well", "isCorrect": false }, { "text": "enough", "isCorrect": true }] },
-{ "section": "Vocabulary Section", "question": "He ____ in love with her at first sight.", "points": 1, "answerOptions": [{ "text": "got", "isCorrect": false }, { "text": "made", "isCorrect": false }, { "text": "fell", "isCorrect": true }, { "text": "felt", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "I often ____ volleyball when I'm at the beach.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "go", "isCorrect": false }, { "text": "play", "isCorrect": true }, { "text": "make", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "________ your coat before you leave, it's cold outside.", "points": 1, "answerOptions": [{ "text": "Wear", "isCorrect": false }, { "text": "Put on", "isCorrect": true }, { "text": "Put off", "isCorrect": false }, { "text": "Take off", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "My sister ____ the cooking in our house.", "points": 1, "answerOptions": [{ "text": "makes", "isCorrect": false }, { "text": "does", "isCorrect": true }, { "text": "cooks", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "Try not to worry ____ it any more. Everything will be fine.", "points": 1, "answerOptions": [{ "text": "of", "isCorrect": false }, { "text": "for", "isCorrect": false }, { "text": "by", "isCorrect": false }, { "text": "about", "isCorrect": true }] },
-{ "section": "Vocabulary Section", "question": "Sally ____ a lot of money, her new job is much better paid than the old one.", "points": 1, "answerOptions": [{ "text": "earns", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "wins", "isCorrect": false }, { "text": "takes", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "Surgeons mustn't ____ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
-{ "section": "Vocabulary Section", "question": "He hates flying. That's why he never travels ____.", "points": 1, "answerOptions": [{ "text": "by train", "isCorrect": false }, { "text": "by plane", "isCorrect": true }, { "text": "by ferry", "isCorrect": false }, { "text": "on foot", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "People ____ Kate for her beauty and talent.", "points": 1, "answerOptions": [{ "text": "see", "isCorrect": false }, { "text": "look", "isCorrect": false }, { "text": "admire", "isCorrect": true }, { "text": "imagine", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "Can you ____ me this book?", "points": 1, "answerOptions": [{ "text": "borrow", "isCorrect": false }, { "text": "owe", "isCorrect": false }, { "text": "rent", "isCorrect": false }, { "text": "lend", "isCorrect": true }] },
-{ "section": "Vocabulary Section", "question": "Choose the synonym for 'rapid'.", "points": 1, "answerOptions": [{ "text": "slow", "isCorrect": false }, { "text": "quick", "isCorrect": true }, { "text": "heavy", "isCorrect": false }, { "text": "wide", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "Which word describes a person who is exceptionally intelligent?", "points": 1, "answerOptions": [{ "text": "brilliant", "isCorrect": true }, { "text": "boring", "isCorrect": false }, { "text": "bored", "isCorrect": false }, { "text": "busy", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "You keep things in a fridge to keep them ____.", "points": 1, "answerOptions": [{ "text": "hot", "isCorrect": false }, { "text": "cold", "isCorrect": true }, { "text": "dry", "isCorrect": false }, { "text": "loud", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "A person who writes books is an ____.", "points": 1, "answerOptions": [{ "text": "actor", "isCorrect": false }, { "text": "author", "isCorrect": true }, { "text": "artist", "isCorrect": false }, { "text": "architect", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "What is the opposite of 'generous'?", "points": 1, "answerOptions": [{ "text": "kind", "isCorrect": false }, { "text": "mean", "isCorrect": true }, { "text": "nice", "isCorrect": false }, { "text": "polite", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "We bought our fruit and vegetables at the local ____.", "points": 1, "answerOptions": [{ "text": "bakery", "isCorrect": false }, { "text": "market", "isCorrect": true }, { "text": "pharmacy", "isCorrect": false }, { "text": "station", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "Please turn ____ the TV, I want to watch the news.", "points": 1, "answerOptions": [{ "text": "on", "isCorrect": true }, { "text": "off", "isCorrect": false }, { "text": "down", "isCorrect": false }, { "text": "away", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "She has a great ____ for languages; she speaks four fluently.
-", "points": 1, "answerOptions": [{ "text": "talent", "isCorrect": true }, { "text": "habit", "isCorrect": false }, { "text": "hobby", "isCorrect": false }, { "text": "custom", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "The weather forecast says it will be sunny with a mild ____.", "points": 1, "answerOptions": [{ "text": "breeze", "isCorrect": true }, { "text": "storm", "isCorrect": false }, { "text": "hurricane", "isCorrect": false }, { "text": "blizzard", "isCorrect": false }] },
-{ "section": "Vocabulary Section", "question": "He gave me a valuable ____ of advice before my interview.", "points": 1, "answerOptions": [{ "text": "piece", "isCorrect": true }, { "text": "bit", "isCorrect": false }, { "text": "item", "isCorrect": false }, { "text": "word", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "________ in winter.", "points": 2, "answerOptions": [{ "text": "Cold", "isCorrect": false }, { "text": "There is cold", "isCorrect": false }, { "text": "Cold is", "isCorrect": false }, { "text": "It is cold", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "Sorry, I'm busy. I ____ an e-mail.", "points": 2, "answerOptions": [{ "text": "write", "isCorrect": false }, { "text": "wrote", "isCorrect": false }, { "text": "am written", "isCorrect": false }, { "text": "am writing", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "The film .", "points": 2, "answerOptions": [{ "text": "shock", "isCorrect": false }, { "text": "shocking", "isCorrect": false }, { "text": "is shocked", "isCorrect": false }, { "text": "is shocking", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": " you have to travel a lot next morning, try to get to bed earlier than usually.", "points": 2, "answerOptions": [{ "text": "Until", "isCorrect": false }, { "text": "If", "isCorrect": true }, { "text": "After", "isCorrect": false }, { "text": "Till", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "I'd be really ____ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "It was a great meal, but pretty expensive. Just look at the ________", "points": 2, "answerOptions": [{ "text": "ticket", "isCorrect": false }, { "text": "invoice", "isCorrect": false }, { "text": "recipe", "isCorrect": false }, { "text": "bill", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "You know, if you come late once again, I'll ____ you!", "points": 2, "answerOptions": [{ "text": "hire", "isCorrect": false }, { "text": "employ", "isCorrect": false }, { "text": "promote", "isCorrect": false }, { "text": "fire", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "My dad ____ me to go ahead with my idea.", "points": 2, "answerOptions": [{ "text": "said", "isCorrect": false }, { "text": "suggested", "isCorrect": false }, { "text": "encouraged", "isCorrect": true }, { "text": "claimed", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "I would like ____ it.", "points": 2, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "to do", "isCorrect": true }, { "text": "doing", "isCorrect": false }, { "text": "does", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "When he ____ the movie, his mobile rang.", "points": 2, "answerOptions": [{ "text": "watched", "isCorrect": false }, { "text": "is watching", "isCorrect": false }, { "text": "watching", "isCorrect": false }, { "text": "was watching", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "I can't open the door! I ____ my keys.", "points": 2, "answerOptions": [{ "text": "lost", "isCorrect": false }, { "text": "have lost", "isCorrect": true }, { "text": "has lost", "isCorrect": false }, { "text": "had lost", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "She said she ____ come to the office yesterday.", "points": 2, "answerOptions": [{ "text": "would", "isCorrect": true }, { "text": "was", "isCorrect": false }, { "text": "is", "isCorrect": false }, { "text": "will", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "I enjoy ____ in the ocean.", "points": 2, "answerOptions": [{ "text": "swim", "isCorrect": false }, { "text": "to swim", "isCorrect": false }, { "text": "the swimming", "isCorrect": false }, { "text": "swimming", "isCorrect": true }] },
-{ "section": "Grammar Section", "question": "If James ____ this book, he will give it back.", "points": 2, "answerOptions": [{ "text": "would find", "isCorrect": false }, { "text": "will find", "isCorrect": false }, { "text": "finds", "isCorrect": true }, { "text": "find", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "NOTICE: On Friday hundreds of our most popular products will be reduced for one day only! Don't miss it!", "points": 2, "answerOptions": [{ "text": "Everything in this shop will be cheaper on Friday.", "isCorrect": false }, { "text": "There will be a discount on many products on Friday.", "isCorrect": true }, { "text": "The shop's most popular products will cost less after Friday.", "isCorrect": false }, { "text": "Products are reduced every single day of the week.", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "WAIT FOR LIFT DOORS TO CLOSE BEFORE PRESSING THE BUTTON", "points": 2, "answerOptions": [{ "text": "Press the button while the doors are closing.", "isCorrect": false }, { "text": "Press the button to close the doors.", "isCorrect": false }, { "text": "Press the button after the doors close.", "isCorrect": true }, { "text": "Press the button before touching the doors.", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "By this time next year, she ____ her degree.", "points": 2, "answerOptions": [{ "text": "will finish", "isCorrect": false }, { "text": "will have finished", "isCorrect": true }, { "text": "finishes", "isCorrect": false }, { "text": "finished", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "Neither John nor his friends ____ coming to the party.", "points": 2, "answerOptions": [{ "text": "is", "isCorrect": false }, { "text": "are", "isCorrect": true }, { "text": "was", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "Hardly ____ the station when the train started moving.", "points": 2, "answerOptions": [{ "text": "had I reached", "isCorrect": true }, { "text": "I had reached", "isCorrect": false }, { "text": "did I reached", "isCorrect": false }, { "text": "reached I", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "The report needs ____ before Friday morning.", "points": 2, "answerOptions": [{ "text": "to complete", "isCorrect": false }, { "text": "completing", "isCorrect": true }, { "text": "complete", "isCorrect": false }, { "text": "completed", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "Had I known about the traffic, I ____ another route.", "points": 2, "answerOptions": [{ "text": "would take", "isCorrect": false }, { "text": "will take", "isCorrect": false }, { "text": "would have taken", "isCorrect": true }, { "text": "took", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "It's high time you ____ studying for your exams.", "points": 2, "answerOptions": [{ "text": "start", "isCorrect": false }, { "text": "started", "isCorrect": true }, { "text": "have started", "isCorrect": false }, { "text": "will start", "isCorrect": false }] },
-{ "section": "Grammar Section", "question": "Not only ____ the exam, but she also got the highest score.", "points": 2, "answerOptions": [{ "text": "she passed", "isCorrect": false }, { "text": "did she pass", "isCorrect": true }, { "text": "passed she", "isCorrect": false }, { "text": "has she passed", "isCorrect": false }] }
-]
-};
-let candidateInfo = { name: '', email: '', phone: '', goal: '' };
-let currentQuestionIndex = 0;
-let earnedPoints = 0;
-let totalPossiblePoints = quizData.questions.reduce((sum, q) => sum + q.points, 0);
-let selectedOptionIndex = null;
-let userAnswersLog = [];
-let timeLeft = 30 * 60;
-let timerInterval = null;
-const candidateFormContainer = document.getElementById('candidate-form-container');
-const startTestBtn = document.getElementById('start-test-btn');
-const candidateNameInput = document.getElementById('candidate-name');
-const candidateEmailInput = document.getElementById('candidate-email');
-const candidatePhoneInput = document.getElementById('candidate-phone');
-const candidateGoalInput = document.getElementById('candidate-goal');
-const timeDisplay = document.getElementById('time-display');
-const questionCounter = document.getElementById('question-counter');
-const questionPoints = document.getElementById('question-points');
-const sectionBadge = document.getElementById('section-badge');
-const questionText = document.getElementById('question-text');
-const optionsList = document.getElementById('options-list');
-const nextBtn = document.getElementById('next-btn');
-const skipBtn = document.getElementById('skip-btn');
-const quizContainer = document.getElementById('quiz-container');
-const resultsContainer = document.getElementById('results-container');
-const emailStatus = document.getElementById('email-status');
-const customModal = document.getElementById('custom-modal');
-const modalMessage = document.getElementById('modal-message');
-const modalCloseBtn = document.getElementById('modal-close-btn');
-function showModal(message) {
-modalMessage.textContent = message;
-customModal.classList.remove('hidden');
-}
-modalCloseBtn.onclick = () => {
-customModal.classList.add('hidden');
-};
-startTestBtn.onclick = (e) => {
-e.preventDefault();
-const name = candidateNameInput.value.trim();
-const email = candidateEmailInput.value.trim();
-const phone = candidatePhoneInput.value.trim();
-const goal = candidateGoalInput.value.trim();
-if (!name || !email) {
-showModal('Please fill in your name and email to start.');
-return;
-}
-candidateInfo = { name, email, phone: phone  'Not specified', goal: goal  'Not specified' };
-candidateFormContainer.classList.add('hidden');
-quizContainer.classList.remove('hidden');
-startTimer();
-loadQuestion();
-};
-function startTimer() {
-timerInterval = setInterval(() => {
-if (timeLeft <= 0) {
-clearInterval(timerInterval);
-finishTest();
-return;
-}
-timeLeft--;
-const minutes = Math.floor(timeLeft / 60);
-const seconds = timeLeft % 60;
-timeDisplay.textContent = ⁠${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}⁠;
-}, 1000);
-}
-function loadQuestion() {
-selectedOptionIndex = null;
-nextBtn.disabled = true;
-const q = quizData.questions[currentQuestionIndex];
-questionCounter.textContent = ⁠Question ${currentQuestionIndex + 1} of ${quizData.questions.length}⁠;
-questionPoints.textContent = ⁠${q.points} Point${q.points > 1 ? 's' : ''}⁠;
-sectionBadge.textContent = q.section || "General Assessment";
-questionText.textContent = q.question;
-optionsList.innerHTML = '';
-q.answerOptions.forEach((option, index) => {
-const btn = document.createElement('button');
-btn.type = "button";
-btn.className = "option-btn";
-btn.textContent = option.text;
-btn.onclick = () => selectOption(index, btn);
-optionsList.appendChild(btn);
-});
-}
-function selectOption(index, buttonElement) {
-Array.from(optionsList.children).forEach(btn => btn.classList.remove('selected'));
-buttonElement.classList.add('selected');
-selectedOptionIndex = index;
-nextBtn.disabled = false;
-}
-skipBtn.onclick = () => {
-recordAnswer(null, false, "Skipped");
-proceedNext();
-};
-nextBtn.onclick = () => {
-if (selectedOptionIndex === null) return;
-const q = quizData.questions[currentQuestionIndex];
-const chosenOption = q.answerOptions[selectedOptionIndex];
-const isCorrect = chosenOption.isCorrect;
-if (isCorrect) earnedPoints += q.points;
-recordAnswer(chosenOption.text, isCorrect, chosenOption.text);
-proceedNext();
-};
-function recordAnswer(answerText, isCorrect, logAnswer) {
 
-Julia Semikolenova, [05.09.2026 15:14]
-const q = quizData.questions[currentQuestionIndex];
-userAnswersLog.push({
-questionNumber: currentQuestionIndex + 1,
-question: q.question,
-userAnswer: logAnswer,
-isCorrect: isCorrect,
-pointsAwarded: isCorrect ? q.points : 0,
-maxPoints: q.points
-});
-}
-function proceedNext() {
-currentQuestionIndex++;
-if (currentQuestionIndex < quizData.questions.length) {
-loadQuestion();
-} else {
-finishTest();
-}
-}
-function finishTest() {
-clearInterval(timerInterval);
-quizContainer.classList.add('hidden');
-resultsContainer.classList.remove('hidden');
-let levelTitle = "";
-if (earnedPoints >= 57) {
-levelTitle = "Upper Int";
-} else if (earnedPoints >= 40) {
-levelTitle = "Int";
-} else if (earnedPoints >= 23) {
-levelTitle = "Pre-int";
-} else if (earnedPoints >= 7) {
-levelTitle = "Elementary";
-} else {
-levelTitle = "Starter";
-}
-let detailedLogString = userAnswersLog.map(log =>
-⁠Q${log.questionNumber}: ${log.question}\nAnswer: ${log.userAnswer} [${log.isCorrect ? 'Correct ✅' : 'Incorrect ❌'}] (${log.pointsAwarded}/${log.maxPoints} pts)⁠
-).join('\n\n');
-const messageBody = `Новый результат прохождения теста!
-Имя ученика: ${candidateInfo.name}
-Почта ученика: ${candidateInfo.email}
-Телефон / Мессенджер: ${candidateInfo.phone}
-Цель / Комментарий: ${candidateInfo.goal}
+  <div class="card">
+    <div class="header">
+      <div>
+        <h1 style="margin: 0; font-size: 22px;">Level Test (Базовый Уровневый Тест)</h1>
+        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Vocabulary & Grammar assessment (46 Questions).</p>
+      </div>
+      <div class="timer" id="time-display">30:00</div>
+    </div>
+
+    <div id="candidate-form-container">
+      <h2 style="font-size: 18px; margin-top: 0;">Enter Your Details</h2>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 16px;">Please fill in your details before beginning the test.</p>
+      
+      <label style="font-size: 14px; font-weight: 500; display: block;">Your name and surname (Ваши имя и фамилия) *</label>
+      <input type="text" id="candidate-name" class="input-field" placeholder="Краткий ответ">
+      
+      <label style="font-size: 14px; font-weight: 500; display: block;">Your email (Ваша электронная почта) *</label>
+      <input type="email" id="candidate-email" class="input-field" placeholder="Краткий ответ">
+
+      <label style="font-size: 14px; font-weight: 500; display: block;">Your phone number (Ваш номер телефона) *</label>
+      <input type="text" id="candidate-phone" class="input-field" placeholder="Краткий ответ">
+
+      <label style="font-size: 14px; font-weight: 500; display: block;">For pupils: your form and age (Для школьников: класс и возраст)</label>
+      <input type="text" id="candidate-goal" class="input-field" placeholder="Краткий ответ">
+
+      <button id="start-test-btn" class="btn" type="button">Start Test (30 Mins)</button>
+    </div>
+
+    <div id="quiz-container" class="hidden">
+      <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #4f46e5; margin-bottom: 8px; text-transform: uppercase;">
+        <span id="question-counter">Question 1 of 46</span>
+        <span id="question-points" style="color: #d97706;">1 Point</span>
+      </div>
+      <div id="section-badge" class="section-title">Vocabulary Section</div>
+      <h2 id="question-text" style="font-size: 18px; margin-bottom: 20px;">Loading question...</h2>
+      
+      <div id="options-list"></div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px; flex-wrap: wrap; gap: 10px;">
+        <button id="skip-btn" type="button" style="background: none; border: none; color: #64748b; font-weight: 600; cursor: pointer; font-size: 14px; padding: 0;">Skip the question (Пропустить вопрос)</button>
+        <button id="next-btn" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;" disabled>Next Question</button>
+      </div>
+    </div>
+
+    <div id="results-container" class="hidden" style="text-align: center; padding: 20px 0;">
+      <div style="font-size: 50px; margin-bottom: 15px;">🎉</div>
+      <h2 style="margin-top: 0; font-size: 24px; color: #1e293b;">Well done! See you soon.</h2>
+      <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
+        Your test has been successfully submitted.<br>Thank you for taking the assessment!
+      </p>
+      <div id="email-status" style="font-size: 13px; color: #6366f1; margin-bottom: 20px; font-weight: 600;">Sending email report...</div>
+    </div>
+  </div>
+
+  <div id="custom-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h3 id="modal-title" style="margin-top: 0; color: #1e293b; font-size: 18px;">Notice</h3>
+      <p id="modal-message" style="color: #64748b; font-size: 14px; margin-bottom: 20px;"></p>
+      <button id="modal-close-btn" class="btn" style="margin-top: 0;">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = {
+      "questions": [
+        // Часть 1: Vocabulary (25 вопросов)
+        { "section": "Vocabulary Section", "question": "1. ______ Peter work as a marketeer?", "points": 1, "answerOptions": [{ "text": "Is", "isCorrect": false }, { "text": "Does", "isCorrect": true }, { "text": "Has", "isCorrect": false }, { "text": "Do", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "2. — ________   that girl with long hair? —  That’s my sister.", "points": 1, "answerOptions": [{ "text": "Who", "isCorrect": true }, { "text": "Who's", "isCorrect": false }, { "text": "Whom", "isCorrect": false }, { "text": "Whose", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "3. _________ eggs do we need for the cake?", "points": 1, "answerOptions": [{ "text": "How much", "isCorrect": false }, { "text": "How many", "isCorrect": true }, { "text": "How little", "isCorrect": false }, { "text": "How", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "4. The book is interesting for ___________ (me and my friend).", "points": 1, "answerOptions": [{ "text": "us", "isCorrect": true }, { "text": "ours", "isCorrect": false }, { "text": "them", "isCorrect": false }, { "text": "our", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "5. Every weekend he _____________ tennis.", "points": 1, "answerOptions": [{ "text": "play", "isCorrect": false }, { "text": "is playing", "isCorrect": false }, { "text": "plays", "isCorrect": true }, { "text": "playing", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "6. Are ____________ any good restaurants in this town?", "points": 1, "answerOptions": [{ "text": "here", "isCorrect": false }, { "text": "they", "isCorrect": false }, { "text": "there", "isCorrect": true }, { "text": "their", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "7. Did you _____________ the book you were looking for yesterday?", "points": 1, "answerOptions": [{ "text": "find", "isCorrect": true }, { "text": "finded", "isCorrect": false }, { "text": "found", "isCorrect": false }, { "text": "founded", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "8. This car is _______________ than that one.", "points": 1, "answerOptions": [{ "text": "more cheap", "isCorrect": false }, { "text": "more cheaper", "isCorrect": false }, { "text": "cheaper", "isCorrect": true }, { "text": "cheap", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "9. There _______ in the bottle.", "points": 2, "answerOptions": [{ "text": "is milk", "isCorrect": true }, { "text": "a milk", "isCorrect": false }, { "text": "are milk", "isCorrect": false }, { "text": "is a milk", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "10. __________ in winter.", "points": 2, "answerOptions": [{ "text": "Cold", "isCorrect": false }, { "text": "There is cold", "isCorrect": false }, { "text": "Cold is", "isCorrect": false }, { "text": "It is cold", "isCorrect": true }] },
+        { "section": "Vocabulary Section", "question": "11. Sorry, I’m busy. I ___________ an e-mail.", "points": 2, "answerOptions": [{ "text": "write", "isCorrect": false }, { "text": "wrote", "isCorrect": false }, { "text": "am written", "isCorrect": false }, { "text": "am writing", "isCorrect": true }] },
+        { "section": "Vocabulary Section", "question": "12. The film __________.", "points": 2, "answerOptions": [{ "text": "shock", "isCorrect": false }, { "text": "shocking", "isCorrect": false }, { "text": "is shocked", "isCorrect": false }, { "text": "is shocking", "isCorrect": true }] },
+        { "section": "Vocabulary Section", "question": "13. I would like ___________ it.", "points": 2, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "to do", "isCorrect": true }, { "text": "doing", "isCorrect": false }, { "text": "does", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "14. When he ____________ the movie, his mobile rang.", "points": 2, "answerOptions": [{ "text": "watched", "isCorrect": false }, { "text": "is watching", "isCorrect": false }, { "text": "watching", "isCorrect": false }, { "text": "was watching", "isCorrect": true }] },
+        { "section": "Vocabulary Section", "question": "15. I can’t open the door! I ____________ my keys.", "points": 2, "answerOptions": [{ "text": "lost", "isCorrect": false }, { "text": "have lost", "isCorrect": true }, { "text": "has lost", "isCorrect": false }, { "text": "had lost", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "16. She said she ___________ come to the office yesterday.", "points": 2, "answerOptions": [{ "text": "would", "isCorrect": true }, { "text": "was", "isCorrect": false }, { "text": "is", "isCorrect": false }, { "text": "will", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "17. I enjoy _______ in the ocean.", "points": 2, "answerOptions": [{ "text": "swim", "isCorrect": false }, { "text": "to swim", "isCorrect": false }, { "text": "the swimming", "isCorrect": false }, { "text": "swimming", "isCorrect": true }] },
+        { "section": "Vocabulary Section", "question": "18. If James _____________ this book, he will give it back.", "points": 2, "answerOptions": [{ "text": "would find", "isCorrect": false }, { "text": "will find", "isCorrect": false }, { "text": "finds", "isCorrect": true }, { "text": "find", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "19. I don’t like loud music. Neither _______ he.", "points": 2, "answerOptions": [{ "text": "does", "isCorrect": true }, { "text": "doesn't", "isCorrect": false }, { "text": "do", "isCorrect": false }, { "text": "don't", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "20. (Он умеет играть на гитаре.) He _______ play the guitar.", "points": 1, "answerOptions": [{ "text": "can", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "is", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "21. (Она должна быть на уроке.) She _______ be at the lesson.", "points": 1, "answerOptions": [{ "text": "must", "isCorrect": true }, { "text": "should", "isCorrect": false }, { "text": "has to", "isCorrect": false }, { "text": "is", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "22. (Кто написал это письмо?) Who _______ this letter?", "points": 1, "answerOptions": [{ "text": "wrote", "isCorrect": true }, { "text": "did write", "isCorrect": false }, { "text": "has written", "isCorrect": false }, { "text": "writes", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "23. (Кому он написал это письмо?) Who _______ this letter to?", "points": 3, "answerOptions": [{ "text": "did he write", "isCorrect": true }, { "text": "he wrote", "isCorrect": false }, { "text": "wrote", "isCorrect": false }, { "text": "has written", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "24. (Я собираюсь прочитать эту книгу.) I _______ to read this book.", "points": 2, "answerOptions": [{ "text": "am going", "isCorrect": true }, { "text": "plan", "isCorrect": false }, { "text": "want", "isCorrect": false }, { "text": "intend", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "25. (Эта книга была написана 2 года назад.) This book _______ two years ago.", "points": 2, "answerOptions": [{ "text": "was written", "isCorrect": true }, { "text": "wrote", "isCorrect": false }, { "text": "has written", "isCorrect": false }, { "text": "is written", "isCorrect": false }] },
+
+        // Часть 2: Grammar & Advanced Section (21 вопрос)
+        { "section": "Grammar Section", "question": "26. She sells clothes. She’s a _________.", "points": 1, "answerOptions": [{ "text": "travel agent", "isCorrect": false }, { "text": "shop assistant", "isCorrect": true }, { "text": "teacher", "isCorrect": false }, { "text": "driver", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "27. My son goes to school. He is ___________ years old.", "points": 1, "answerOptions": [{ "text": "thirty", "isCorrect": false }, { "text": "twenty", "isCorrect": false }, { "text": "thirteen", "isCorrect": true }, { "text": "eighty", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "28. I always go to the cinema _______ Fridays.", "points": 1, "answerOptions": [{ "text": "in", "isCorrect": false }, { "text": "on", "isCorrect": true }, { "text": "at", "isCorrect": false }, { "text": "of", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "29. It's ___________ to sleep seven or eight hours, but some people sleep more.", "points": 1, "answerOptions": [{ "text": "less", "isCorrect": false }, { "text": "more", "isCorrect": false }, { "text": "well", "isCorrect": false }, { "text": "enough", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "30. He __________ in love with her at first sight.", "points": 1, "answerOptions": [{ "text": "got", "isCorrect": false }, { "text": "made", "isCorrect": false }, { "text": "fell", "isCorrect": true }, { "text": "felt", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "31. I often _____________ volleyball when I’m at the beach.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "go", "isCorrect": false }, { "text": "play", "isCorrect": true }, { "text": "make", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "32. __________ your coat before you leave, it’s cold outside.", "points": 1, "answerOptions": [{ "text": "Wear", "isCorrect": false }, { "text": "Put on", "isCorrect": true }, { "text": "Put off", "isCorrect": false }, { "text": "Take off", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "33. My sister___________ the cooking in our house.", "points": 1, "answerOptions": [{ "text": "makes", "isCorrect": false }, { "text": "does", "isCorrect": true }, { "text": "cooks", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "34. Try not to worry ____________ it any more. Everything will be fine.", "points": 1, "answerOptions": [{ "text": "of", "isCorrect": false }, { "text": "for", "isCorrect": false }, { "text": "by", "isCorrect": false }, { "text": "about", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "35. Sally __________ a lot of money, her new job is much better paid than the old one.", "points": 1, "answerOptions": [{ "text": "earns", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "wins", "isCorrect": false }, { "text": "takes", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "36. Surgeons mustn't   ______________ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "37. He hates flying. That’s why he never travels ______.", "points": 1, "answerOptions": [{ "text": "by train", "isCorrect": false }, { "text": "by plane", "isCorrect": true }, { "text": "by ferry", "isCorrect": false }, { "text": "on foot", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "38. People ___________ Kate for her beauty and talent.", "points": 1, "answerOptions": [{ "text": "see", "isCorrect": false }, { "text": "look", "isCorrect": false }, { "text": "admire", "isCorrect": true }, { "text": "imagine", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "39. __________ you have to travel a lot next morning, try to get to bed earlier than usually.", "points": 1, "answerOptions": [{ "text": "Until", "isCorrect": false }, { "text": "If", "isCorrect": true }, { "text": "After", "isCorrect": false }, { "text": "Till", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "40. Can you ________ me this book?", "points": 1, "answerOptions": [{ "text": "borrow", "isCorrect": false }, { "text": "owe", "isCorrect": false }, { "text": "rent", "isCorrect": false }, { "text": "lend", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "41. I’d be really   _____________ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "42. It was a great meal, but pretty expensive. Just look at the _____________.", "points": 2, "answerOptions": [{ "text": "ticket", "isCorrect": false }, { "text": "invoice", "isCorrect": false }, { "text": "recipe", "isCorrect": false }, { "text": "bill", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "43. You know, if you come late once again, I’ll ___________ you!", "points": 2, "answerOptions": [{ "text": "hire", "isCorrect": false }, { "text": "employ", "isCorrect": false }, { "text": "promote", "isCorrect": false }, { "text": "fire", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "44. My dad ____________ me to go ahead with my idea.", "points": 2, "answerOptions": [{ "text": "said", "isCorrect": false }, { "text": "suggested", "isCorrect": false }, { "text": "encouraged", "isCorrect": true }, { "text": "claimed", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "45. “NOTICE: On Friday hundreds of our most popular products will be reduced for one day only! Don’t miss it!”", "points": 2, "answerOptions": [{ "text": "Everything in this shop will be cheaper on Friday.", "isCorrect": false }, { "text": "There will be a discount on many products on Friday.", "isCorrect": true }, { "text": "The shop’s most popular products will cost less after Friday.", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "46. “WAIT FOR LIFT DOORS TO CLOSE BEFORE PRESSING THE BUTTON”", "points": 2, "answerOptions": [{ "text": "Press the button while the doors are closing.", "isCorrect": false }, { "text": "Press the button to close the doors.", "isCorrect": false }, { "text": "Press the button after the doors close.", "isCorrect": true }] }
+      ]
+    };
+
+    let candidateInfo = { name: '', email: '', phone: '', goal: '' };
+    let currentQuestionIndex = 0;
+    let earnedPoints = 0;
+    let totalPossiblePoints = quizData.questions.reduce((sum, q) => sum + q.points, 0);
+    let selectedOptionIndex = null;
+    let userAnswersLog = [];
+    let timeLeft = 30 * 60;
+    let timerInterval = null;
+
+    const candidateFormContainer = document.getElementById('candidate-form-container');
+    const startTestBtn = document.getElementById('start-test-btn');
+    const candidateNameInput = document.getElementById('candidate-name');
+    const candidateEmailInput = document.getElementById('candidate-email');
+    const candidatePhoneInput = document.getElementById('candidate-phone');
+    const candidateGoalInput = document.getElementById('candidate-goal');
+
+    const timeDisplay = document.getElementById('time-display');
+    const questionCounter = document.getElementById('question-counter');
+    const questionPoints = document.getElementById('question-points');
+    const sectionBadge = document.getElementById('section-badge');
+    const questionText = document.getElementById('question-text');
+    const optionsList = document.getElementById('options-list');
+    const nextBtn = document.getElementById('next-btn');
+    const skipBtn = document.getElementById('skip-btn');
+    const quizContainer = document.getElementById('quiz-container');
+    const resultsContainer = document.getElementById('results-container');
+    const emailStatus = document.getElementById('email-status');
+
+    const customModal = document.getElementById('custom-modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    function showModal(message) {
+      modalMessage.textContent = message;
+      customModal.classList.remove('hidden');
+    }
+
+    modalCloseBtn.onclick = () => {
+      customModal.classList.add('hidden');
+    };
+
+    startTestBtn.onclick = (e) => {
+      e.preventDefault();
+      const name = candidateNameInput.value.trim();
+      const email = candidateEmailInput.value.trim();
+      const phone = candidatePhoneInput.value.trim();
+      const goal = candidateGoalInput.value.trim();
+
+      if (!name || !email || !phone) {
+        showModal('Please fill in all required fields (Name, Email, and Phone number) to start.');
+        return;
+      }
+      candidateInfo = { name, email, phone, goal: goal || 'Not specified' };
+      candidateFormContainer.classList.add('hidden');
+      quizContainer.classList.remove('hidden');
+      startTimer();
+      loadQuestion();
+    };
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          finishTest();
+          return;
+        }
+        timeLeft--;
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    function loadQuestion() {
+      selectedOptionIndex = null;
+      nextBtn.disabled = true;
+
+      const q = quizData.questions[currentQuestionIndex];
+      questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.questions.length}`;
+      questionPoints.textContent = `${q.points} Point${q.points > 1 ? 's' : ''}`;
+      sectionBadge.textContent = q.section || "General Assessment";
+      questionText.textContent = q.question;
+
+      optionsList.innerHTML = '';
+      q.answerOptions.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.type = "button";
+        btn.className = "option-btn";
+        btn.textContent = option.text;
+        btn.onclick = () => selectOption(index, btn);
+        optionsList.appendChild(btn);
+      });
+    }
+
+    function selectOption(index, buttonElement) {
+      Array.from(optionsList.children).forEach(btn => btn.classList.remove('selected'));
+      buttonElement.classList.add('selected');
+      selectedOptionIndex = index;
+      nextBtn.disabled = false;
+    }
+
+    skipBtn.onclick = () => {
+      recordAnswer(null, false, "Skipped");
+      proceedNext();
+    };
+
+    nextBtn.onclick = () => {
+      if (selectedOptionIndex === null) return;
+      const q = quizData.questions[currentQuestionIndex];
+      const chosenOption = q.answerOptions[selectedOptionIndex];
+      const isCorrect = chosenOption.isCorrect;
+
+      if (isCorrect) earnedPoints += q.points;
+
+      recordAnswer(chosenOption.text, isCorrect, chosenOption.text);
+      proceedNext();
+    };
+
+    function recordAnswer(answerText, isCorrect, logAnswer) {
+      const q = quizData.questions[currentQuestionIndex];
+      userAnswersLog.push({
+        questionNumber: currentQuestionIndex + 1,
+        question: q.question,
+        userAnswer: logAnswer,
+        isCorrect: isCorrect,
+        pointsAwarded: isCorrect ? q.points : 0,
+        maxPoints: q.points
+      });
+    }
+
+    function proceedNext() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.questions.length) {
+        loadQuestion();
+      } else {
+        finishTest();
+      }
+    }
+
+    function finishTest() {
+      clearInterval(timerInterval);
+      quizContainer.classList.add('hidden');
+      resultsContainer.classList.remove('hidden');
+
+      let levelTitle = "";
+      const percentage = (earnedPoints / totalPossiblePoints) * 100;
+      
+      if (percentage >= 80) {
+        levelTitle = "Upper-Intermediate / Advanced (B2-C1)";
+      } else if (percentage >= 60) {
+        levelTitle = "Intermediate (B1)";
+      } else if (percentage >= 40) {
+        levelTitle = "Pre-Intermediate (A2)";
+      } else if (percentage >= 20) {
+        levelTitle = "Elementary (A1)";
+      } else {
+        levelTitle = "Starter";
+      }
+
+      let detailedLogString = userAnswersLog.map(log => 
+        `Q${log.questionNumber} [Вес: ${log.maxPoints} ${log.maxPoints === 1 ? 'балл' : 'балла'}]: ${log.question}\nAnswer: ${log.userAnswer} [${log.isCorrect ? 'Correct ✅' : 'Incorrect ❌'}] (${log.pointsAwarded}/${log.maxPoints} pts)`
+      ).join('\n\n');
+
+      const messageBody = `Новый результат прохождения теста!
+
+Имя и фамилия: ${candidateInfo.name}
+Почта: ${candidateInfo.email}
+Телефон: ${candidateInfo.phone}
+Класс/возраст: ${candidateInfo.goal}
+
 Определенный уровень: ${levelTitle}
 Общий балл: ${earnedPoints} / ${totalPossiblePoints}
+
+---
 Детальные ответы по каждому вопросу:
 ${detailedLogString}`;
-const templateParams = {
-to_email: "juliasemikolenova@gmail.com",
-candidate_name: candidateInfo.name,
-candidate_email: candidateInfo.email,
-candidate_phone: candidateInfo.phone,
-candidate_goal: candidateInfo.goal,
-total_score: ⁠${earnedPoints} / ${totalPossiblePoints}⁠,
-proficiency_level: levelTitle,
-detailed_answers: detailedLogString,
-message: messageBody
-};
-emailjs.send('service_hyk2n8y', 'wUvPcf2cg6h-wiH75', templateParams)
-.then(() => {
-emailStatus.textContent = "✓ Test submitted successfully.";
-emailStatus.style.color = "#059669";
-}, () => {
-emailStatus.textContent = "✓ Test completed successfully.";
-emailStatus.style.color = "#059669";
-});
-}
-</script>
+
+      const templateParams = {
+        to_email: "juliasemikolenova@gmail.com",
+        name: candidateInfo.name,
+        email: candidateInfo.email,
+        candidate_name: candidateInfo.name,
+        candidate_email: candidateInfo.email,
+        candidate_phone: candidateInfo.phone,
+        candidate_goal: candidateInfo.goal,
+        total_score: `${earnedPoints} / ${totalPossiblePoints}`,
+        proficiency_level: levelTitle,
+        detailed_answers: detailedLogString,
+        message: messageBody
+      };
+
+      emailjs.send('service_hyk2n8y', 'template_p98ulua', templateParams)
+        .then((response) => {
+           console.log('SUCCESS!', response.status, response.text);
+           emailStatus.textContent = "✓ Test submitted successfully & email sent!";
+           emailStatus.style.color = "#059669";
+        }, (error) => {
+           console.error('FAILED...', error);
+           emailStatus.textContent = "⚠️ Error sending email: " + (error.text || JSON.stringify(error));
+           emailStatus.style.color = "#dc2626";
+        });
+    }
+  </script>
 </body>
 </html>
