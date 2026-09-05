@@ -1,4 +1,3 @@
-Julia Semikolenova, [05.09.2026 15:14]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +50,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 <input type="text" id="candidate-goal" class="input-field" placeholder="e.g. Speaking, Work, Exam preparation">
 <button id="start-test-btn" class="btn" type="button">Start Test (30 Mins)</button>
 </div>
-
-Julia Semikolenova, [05.09.2026 15:14]
 <div id="quiz-container" class="hidden">
 <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #4f46e5; margin-bottom: 8px; text-transform: uppercase;">
 <span id="question-counter">Question 1 of 46</span>
@@ -93,8 +90,6 @@ const quizData = {
 { "section": "Vocabulary Section", "question": "I often ____ volleyball when I'm at the beach.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "go", "isCorrect": false }, { "text": "play", "isCorrect": true }, { "text": "make", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "________ your coat before you leave, it's cold outside.", "points": 1, "answerOptions": [{ "text": "Wear", "isCorrect": false }, { "text": "Put on", "isCorrect": true }, { "text": "Put off", "isCorrect": false }, { "text": "Take off", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "My sister ____ the cooking in our house.", "points": 1, "answerOptions": [{ "text": "makes", "isCorrect": false }, { "text": "does", "isCorrect": true }, { "text": "cooks", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
-
-Julia Semikolenova, [05.09.2026 15:14]
 { "section": "Vocabulary Section", "question": "Try not to worry ____ it any more. Everything will be fine.", "points": 1, "answerOptions": [{ "text": "of", "isCorrect": false }, { "text": "for", "isCorrect": false }, { "text": "by", "isCorrect": false }, { "text": "about", "isCorrect": true }] },
 { "section": "Vocabulary Section", "question": "Sally ____ a lot of money, her new job is much better paid than the old one.", "points": 1, "answerOptions": [{ "text": "earns", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "wins", "isCorrect": false }, { "text": "takes", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "Surgeons mustn't ____ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
@@ -109,8 +104,6 @@ Julia Semikolenova, [05.09.2026 15:14]
 { "section": "Vocabulary Section", "question": "We bought our fruit and vegetables at the local ____.", "points": 1, "answerOptions": [{ "text": "bakery", "isCorrect": false }, { "text": "market", "isCorrect": true }, { "text": "pharmacy", "isCorrect": false }, { "text": "station", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "Please turn ____ the TV, I want to watch the news.", "points": 1, "answerOptions": [{ "text": "on", "isCorrect": true }, { "text": "off", "isCorrect": false }, { "text": "down", "isCorrect": false }, { "text": "away", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "She has a great ____ for languages; she speaks four fluently.
-
-Julia Semikolenova, [05.09.2026 15:14]
 ", "points": 1, "answerOptions": [{ "text": "talent", "isCorrect": true }, { "text": "habit", "isCorrect": false }, { "text": "hobby", "isCorrect": false }, { "text": "custom", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "The weather forecast says it will be sunny with a mild ____.", "points": 1, "answerOptions": [{ "text": "breeze", "isCorrect": true }, { "text": "storm", "isCorrect": false }, { "text": "hurricane", "isCorrect": false }, { "text": "blizzard", "isCorrect": false }] },
 { "section": "Vocabulary Section", "question": "He gave me a valuable ____ of advice before my interview.", "points": 1, "answerOptions": [{ "text": "piece", "isCorrect": true }, { "text": "bit", "isCorrect": false }, { "text": "item", "isCorrect": false }, { "text": "word", "isCorrect": false }] },
@@ -125,8 +118,6 @@ Julia Semikolenova, [05.09.2026 15:14]
 { "section": "Grammar Section", "question": "I would like ____ it.", "points": 2, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "to do", "isCorrect": true }, { "text": "doing", "isCorrect": false }, { "text": "does", "isCorrect": false }] },
 { "section": "Grammar Section", "question": "When he ____ the movie, his mobile rang.", "points": 2, "answerOptions": [{ "text": "watched", "isCorrect": false }, { "text": "is watching", "isCorrect": false }, { "text": "watching", "isCorrect": false }, { "text": "was watching", "isCorrect": true }] },
 { "section": "Grammar Section", "question": "I can't open the door! I ____ my keys.", "points": 2, "answerOptions": [{ "text": "lost", "isCorrect": false }, { "text": "have lost", "isCorrect": true }, { "text": "has lost", "isCorrect": false }, { "text": "had lost", "isCorrect": false }] },
-
-Julia Semikolenova, [05.09.2026 15:14]
 { "section": "Grammar Section", "question": "She said she ____ come to the office yesterday.", "points": 2, "answerOptions": [{ "text": "would", "isCorrect": true }, { "text": "was", "isCorrect": false }, { "text": "is", "isCorrect": false }, { "text": "will", "isCorrect": false }] },
 { "section": "Grammar Section", "question": "I enjoy ____ in the ocean.", "points": 2, "answerOptions": [{ "text": "swim", "isCorrect": false }, { "text": "to swim", "isCorrect": false }, { "text": "the swimming", "isCorrect": false }, { "text": "swimming", "isCorrect": true }] },
 { "section": "Grammar Section", "question": "If James ____ this book, he will give it back.", "points": 2, "answerOptions": [{ "text": "would find", "isCorrect": false }, { "text": "will find", "isCorrect": false }, { "text": "finds", "isCorrect": true }, { "text": "find", "isCorrect": false }] },
@@ -141,8 +132,6 @@ Julia Semikolenova, [05.09.2026 15:14]
 { "section": "Grammar Section", "question": "Not only ____ the exam, but she also got the highest score.", "points": 2, "answerOptions": [{ "text": "she passed", "isCorrect": false }, { "text": "did she pass", "isCorrect": true }, { "text": "passed she", "isCorrect": false }, { "text": "has she passed", "isCorrect": false }] }
 ]
 };
-
-Julia Semikolenova, [05.09.2026 15:14]
 let candidateInfo = { name: '', email: '', phone: '', goal: '' };
 let currentQuestionIndex = 0;
 let earnedPoints = 0;
