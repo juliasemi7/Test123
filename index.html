@@ -1,3 +1,5 @@
+Возьми этот код
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +34,9 @@
 
   <div class="card">
     <div id="candidate-form-container">
-      <!-- Brand Logo Image Header (Строка ~32) -->
+      <!-- Brand Logo Image Header -->
       <div style="text-align: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-        <img src="https://raw.githubusercontent.com/juliasemi7/Test123/refs/heads/main/LOGO_PRIMARY_HORIZONTAL.png" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;" onerror="this.src='https://placehold.co/600x250/ffffff/4f46e5?text=Julia+Semikolenova'">
+        <img src="https://placehold.co/600x250/ffffff/4f46e5?text=Study+English+with+Julia+Semikolenova" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;" onerror="this.src='https://placehold.co/600x250/ffffff/4f46e5?text=Julia+Semikolenova'">
       </div>
 
       <div class="header" style="border: none; margin-bottom: 16px; padding: 0;">
@@ -347,13 +349,13 @@ ${detailedLogString}`;
         candidate_email: candidateInfo.email,
         candidate_phone: candidateInfo.phone,
         candidate_goal: candidateInfo.goal,
-        total_score: `${earnedPoints} / ${totalPossible` + `pints}`,
+        total_score: `${earnedPoints} / ${totalPossiblePoints}`,
         proficiency_level: levelTitle,
         detailed_answers: detailedLogString,
         message: messageBody
       };
 
-      emailjs.send('service_hyk2n8y', 'template_hyk2n8y', templateParams)
+      emailjs.send('service_hyk2n8y', 'template_p98ulua', templateParams)
         .then((response) => {
            console.log('SUCCESS!', response.status, response.text);
            emailStatus.textContent = "✓ Test submitted successfully & email sent!";
@@ -367,3 +369,9 @@ ${detailedLogString}`;
   </script>
 </body>
 </html>
+
+и 
+на 1 стр вставь логотип наверх
+картинкой 
+не редактируй саму картинку
+выбери удобный для тебя формат файла
