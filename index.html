@@ -15,15 +15,15 @@
     .card { background: #ffffff; max-width: 650px; width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 32px; border: 1px solid #e2e8f0; }
     .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; gap: 15px; flex-wrap: wrap; }
     .timer { background: #fffbeb; border: 1px solid #fde68a; color: #b45309; padding: 8px 16px; border-radius: 12px; font-weight: bold; font-size: 18px; font-family: monospace; }
-    .btn { background: #4f46e5; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 10px; }
-    .btn:hover { background: #4338ca; }
+    .btn { background: #3B3E8C; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 10px; }
+    .btn:hover { background: #2f3273; }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .input-field { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 15px; margin-top: 6px; margin-bottom: 16px; box-sizing: border-box; }
     .option-btn { width: 100%; text-align: left; padding: 14px 16px; border: 1px solid #cbd5e1; border-radius: 10px; background: white; font-size: 15px; cursor: pointer; margin-bottom: 10px; transition: all 0.2s; box-sizing: border-box; }
-    .option-btn:hover { border-color: #4f46e5; background: #e0e7ff; }
-    .option-btn.selected { border-color: #4f46e5; background: #e0e7ff; color: #312e81; font-weight: 600; }
+    .option-btn:hover { border-color: #3B3E8C; background: #e0e7ff; }
+    .option-btn.selected { border-color: #3B3E8C; background: #e0e7ff; color: #3B3E8C; font-weight: 600; }
     .hidden { display: none !important; }
-    .section-title { font-size: 13px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .section-title { font-size: 13px; font-weight: 700; color: #3B3E8C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; z-index: 1000; }
     .modal-card { background: white; padding: 24px; border-radius: 14px; max-width: 380px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center; }
   </style>
@@ -34,18 +34,16 @@
     <div id="candidate-form-container">
       <!-- Brand Logo Image Header -->
       <div style="text-align: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-       <img src="https://github.com/juliasemi7/Test123/blob/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto 20px auto;">
-
-      <div class="header" style="border: none; margin-bottom: 16px; padding: 0;">
-        <div>
-          <h1 style="margin: 0; font-size: 20px; color: #1e293b;">Level Test (Базовый Уровневый Тест)</h1>
-          <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Vocabulary & Grammar assessment (46 Questions).</p>
-        </div>
-        <div class="timer" id="time-display" style="font-size: 16px; padding: 6px 12px;">30:00</div>
+        <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;">
       </div>
 
-      <h2 style="font-size: 16px; margin-top: 10px; margin-bottom: 4px; color: #334155;">Enter Your Details</h2>
-      <p style="color: #64748b; font-size: 13px; margin-bottom: 16px;">Please fill in your details before beginning the test.</p>
+      <div class="header" style="border: none; margin-bottom: 20px; padding: 0; align-items: center;">
+        <div style="text-align: center; width: 100%;">
+          <h1 style="margin: 0; font-size: 22px; color: #3B3E8C;">Level Test (Базовый Уровневый Тест)</h1>
+          <p style="margin: 6px 0 0; color: #64748b; font-size: 14px;">Vocabulary & Grammar assessment (46 Questions).</p>
+        </div>
+        <div class="timer" id="time-display" style="font-size: 16px; padding: 6px 12px; margin: 0 auto;">30:00</div>
+      </div>
       
       <label style="font-size: 14px; font-weight: 500; display: block;">Your name and surname (Ваши имя и фамилия) *</label>
       <input type="text" id="candidate-name" class="input-field" placeholder="Краткий ответ">
@@ -65,12 +63,12 @@
     <div id="quiz-container" class="hidden">
       <div class="header" style="margin-bottom: 16px;">
         <div>
-          <span style="font-size: 12px; font-weight: 700; color: #7c3aed;">Julia Semikolenova English</span>
+          <span style="font-size: 12px; font-weight: 700; color: #3B3E8C;">Julia Semikolenova English</span>
         </div>
         <div class="timer" id="quiz-time-display" style="font-size: 16px; padding: 6px 12px;">30:00</div>
       </div>
 
-      <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #4f46e5; margin-bottom: 8px; text-transform: uppercase;">
+      <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #3B3E8C; margin-bottom: 8px; text-transform: uppercase;">
         <span id="question-counter">Question 1 of 46</span>
         <span id="question-points" style="color: #d97706;">1 Point</span>
       </div>
@@ -91,7 +89,7 @@
       <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
         Your test has been successfully submitted.<br>Thank you for taking the assessment!
       </p>
-      <div id="email-status" style="font-size: 13px; color: #6366f1; margin-bottom: 20px; font-weight: 600;">Sending email report...</div>
+      <div id="email-status" style="font-size: 13px; color: #3B3E8C; margin-bottom: 20px; font-weight: 600;">Sending email report...</div>
     </div>
   </div>
 
@@ -108,7 +106,7 @@
       "questions": [
         // Часть 1: Vocabulary Section (25 вопросов)
         { "section": "Vocabulary Section", "question": "1. ______ Peter work as a marketeer?", "points": 1, "answerOptions": [{ "text": "Is", "isCorrect": false }, { "text": "Does", "isCorrect": true }, { "text": "Has", "isCorrect": false }, { "text": "Do", "isCorrect": false }] },
-        { "section": "Vocabulary Section", "question": "2. — ________   that girl with long hair? —  That’s my sister.", "points": 1, "answerOptions": [{ "text": "Who", "isCorrect": true }, { "text": "Who's", "isCorrect": false }, { "text": "Whom", "isCorrect": false }, { "text": "Whose", "isCorrect": false }] },
+        { "section": "Vocabulary Section", "question": "2. — ________  that girl with long hair? —  That’s my sister.", "points": 1, "answerOptions": [{ "text": "Who", "isCorrect": true }, { "text": "Who's", "isCorrect": false }, { "text": "Whom", "isCorrect": false }, { "text": "Whose", "isCorrect": false }] },
         { "section": "Vocabulary Section", "question": "3. _________ eggs do we need for the cake?", "points": 1, "answerOptions": [{ "text": "How much", "isCorrect": false }, { "text": "How many", "isCorrect": true }, { "text": "How little", "isCorrect": false }, { "text": "How", "isCorrect": false }] },
         { "section": "Vocabulary Section", "question": "4. The book is interesting for ___________ (me and my friend).", "points": 1, "answerOptions": [{ "text": "us", "isCorrect": true }, { "text": "ours", "isCorrect": false }, { "text": "them", "isCorrect": false }, { "text": "our", "isCorrect": false }] },
         { "section": "Vocabulary Section", "question": "5. Every weekend he _____________ tennis.", "points": 1, "answerOptions": [{ "text": "play", "isCorrect": false }, { "text": "is playing", "isCorrect": false }, { "text": "plays", "isCorrect": true }, { "text": "playing", "isCorrect": false }] },
@@ -144,12 +142,12 @@
         { "section": "Grammar Section", "question": "33. My sister___________ the cooking in our house.", "points": 1, "answerOptions": [{ "text": "makes", "isCorrect": false }, { "text": "does", "isCorrect": true }, { "text": "cooks", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "34. Try not to worry ____________ it any more. Everything will be fine.", "points": 1, "answerOptions": [{ "text": "of", "isCorrect": false }, { "text": "for", "isCorrect": false }, { "text": "by", "isCorrect": false }, { "text": "about", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "35. Sally __________ a lot of money, her new job is much better paid than the old one.", "points": 1, "answerOptions": [{ "text": "earns", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "wins", "isCorrect": false }, { "text": "takes", "isCorrect": false }] },
-        { "section": "Grammar Section", "question": "36. Surgeons mustn't   ______________ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "36. Surgeons mustn't  ______________ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "37. He hates flying. That’s why he never travels ______.", "points": 1, "answerOptions": [{ "text": "by train", "isCorrect": false }, { "text": "by plane", "isCorrect": true }, { "text": "by ferry", "isCorrect": false }, { "text": "on foot", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "38. People ___________ Kate for her beauty and talent.", "points": 1, "answerOptions": [{ "text": "see", "isCorrect": false }, { "text": "look", "isCorrect": false }, { "text": "admire", "isCorrect": true }, { "text": "imagine", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "39. __________ you have to travel a lot next morning, try to get to bed earlier than usually.", "points": 1, "answerOptions": [{ "text": "Until", "isCorrect": false }, { "text": "If", "isCorrect": true }, { "text": "After", "isCorrect": false }, { "text": "Till", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "40. Can you ________ me this book?", "points": 1, "answerOptions": [{ "text": "borrow", "isCorrect": false }, { "text": "owe", "isCorrect": false }, { "text": "rent", "isCorrect": false }, { "text": "lend", "isCorrect": true }] },
-        { "section": "Grammar Section", "question": "41. I’d be really   _____________ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "41. I’d be really  _____________ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "42. It was a great meal, but pretty expensive. Just look at the _____________.", "points": 2, "answerOptions": [{ "text": "ticket", "isCorrect": false }, { "text": "invoice", "isCorrect": false }, { "text": "recipe", "isCorrect": false }, { "text": "bill", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "43. You know, if you come late once again, I’ll ___________ you!", "points": 2, "answerOptions": [{ "text": "hire", "isCorrect": false }, { "text": "employ", "isCorrect": false }, { "text": "promote", "isCorrect": false }, { "text": "fire", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "44. My dad ____________ me to go ahead with my idea.", "points": 2, "answerOptions": [{ "text": "said", "isCorrect": false }, { "text": "suggested", "isCorrect": false }, { "text": "encouraged", "isCorrect": true }, { "text": "claimed", "isCorrect": false }] },
