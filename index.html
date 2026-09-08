@@ -14,7 +14,7 @@
   </script>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-    .card { background: #ffffff; max-width: 650px; width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 32px; border: 1px solid #e2e8f0; }
+    .card { background: #ffffff; max-width: 650px; width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 32px; border: 1px solid #e2e8f0; position: relative; }
     .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; gap: 15px; flex-wrap: wrap; }
     .timer { background: #fffbeb; border: 1px solid #fde68a; color: #b45309; padding: 8px 16px; border-radius: 12px; font-weight: bold; font-size: 18px; font-family: monospace; }
     .btn { background: #3B3E8C; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 10px; }
@@ -28,16 +28,22 @@
     .section-title { font-size: 13px; font-weight: 700; color: #3B3E8C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; z-index: 1000; }
     .modal-card { background: white; padding: 24px; border-radius: 14px; max-width: 380px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center; }
+    .corner-logos { position: absolute; top: 16px; right: 16px; display: flex; gap: 8px; align-items: center; z-index: 10; }
+    .corner-logos img { height: 28px; width: auto; object-fit: contain; }
   </style>
 </head>
 <body>
-
   <div class="card">
+    <div class="corner-logos">
+      <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/dog_icon.png" alt="Dog Logo" onerror="this.style.display='none'">
+      <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/second_logo.png" alt="Second Logo" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Candidate Form Container -->
     <div id="candidate-form-container">
       <div style="text-align: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
         <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;" onerror="this.src='https://placehold.co/600x250/ffffff/3B3E8C?text=Julia+Semikolenova'">
       </div>
-
       <div class="header" style="border: none; margin-bottom: 20px; padding: 0; align-items: center;">
         <div style="text-align: center; width: 100%;">
           <h1 style="margin: 0; font-size: 22px; color: #3B3E8C;">Level Test (Базовый Уровневый Тест)</h1>
@@ -51,24 +57,63 @@
       
       <label style="font-size: 14px; font-weight: 500; display: block;">Your email (Ваша электронная почта) *</label>
       <input type="email" id="candidate-email" class="input-field" placeholder="Краткий ответ">
-
       <label style="font-size: 14px; font-weight: 500; display: block;">Your phone number (Ваш номер телефона) *</label>
       <input type="text" id="candidate-phone" class="input-field" placeholder="Краткий ответ">
-
       <label style="font-size: 14px; font-weight: 500; display: block;">For pupils: your form and age (Для школьников: класс и возраст)</label>
       <input type="text" id="candidate-goal" class="input-field" placeholder="Краткий ответ">
-
       <button id="start-test-btn" class="btn" type="button">Start Test (30 Mins)</button>
     </div>
 
+    <!-- Intro Slide 1 Container -->
+    <div id="intro-slide-1" class="hidden">
+      <div class="header" style="margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 100%; height: auto;" onerror="this.style.display='none'">
+        </div>
+        <div class="timer" id="intro-time-1" style="font-size: 16px; padding: 6px 12px;">30:00</div>
+      </div>
+      <div class="section-title">Introduction / Инструкция 1</div>
+      <h2 style="font-size: 18px; margin-bottom: 16px;">Welcome to the Assessment</h2>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://github.com/juliasemi7/Test123/blob/main/1ChatGPT%20Image%209%20%D1%81%D0%B5%D0%BD%D1%82.%202026%20%D0%B3.,%2001_11_03.png?raw=true" alt="Intro Slide 1" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; max-height: 400px; object-fit: contain;" onerror="this.src='https://placehold.co/600x400/e2e8f0/3B3E8C?text=Instruction+Image+1'">
+      </div>
+      <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
+        Please read each question carefully and select the right option or write your short answer. You can skip questions if needed.
+      </p>
+      <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+        <button id="intro-next-1" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;">Next Slide</button>
+      </div>
+    </div>
+
+    <!-- Intro Slide 2 Container -->
+    <div id="intro-slide-2" class="hidden">
+      <div class="header" style="margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 100%; height: auto;" onerror="this.style.display='none'">
+        </div>
+        <div class="timer" id="intro-time-2" style="font-size: 16px; padding: 6px 12px;">30:00</div>
+      </div>
+      <div class="section-title">Introduction / Инструкция 2</div>
+      <h2 style="font-size: 18px; margin-bottom: 16px;">Get Ready to Start</h2>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://github.com/juliasemi7/Test123/blob/main/2ChatGPT%20Image%209%20%D1%81%D0%B5%D0%BD%D1%82.%202026%20%D0%B3.,%2001_11_03.png?raw=true" alt="Intro Slide 2" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; max-height: 400px; object-fit: contain;" onerror="this.src='https://placehold.co/600x400/e2e8f0/3B3E8C?text=Instruction+Image+2'">
+      </div>
+      <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
+        Once you proceed, the test questions will begin. Good luck with your level assessment!
+      </p>
+      <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+        <button id="intro-next-2" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;">Start Questions</button>
+      </div>
+    </div>
+
+    <!-- Quiz Container -->
     <div id="quiz-container" class="hidden">
       <div class="header" style="margin-bottom: 16px;">
-        <div>
-          <span style="font-size: 12px; font-weight: 700; color: #3B3E8C;">Julia Semikolenova English</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 30% !important; height: auto; display: inline-block;" onerror="this.style.display='none'">
         </div>
         <div class="timer" id="quiz-time-display" style="font-size: 16px; padding: 6px 12px;">30:00</div>
       </div>
-
       <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #3B3E8C; margin-bottom: 8px; text-transform: uppercase;">
         <span id="question-counter">Question 1 of 46</span>
         <span id="question-points" style="color: #d97706;">1 Point</span>
@@ -80,13 +125,13 @@
       <div id="text-input-container" class="hidden">
         <input type="text" id="user-text-answer" class="input-field" placeholder="Краткий ответ">
       </div>
-
       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px; flex-wrap: wrap; gap: 10px;">
         <button id="skip-btn" type="button" style="background: none; border: none; color: #64748b; font-weight: 600; cursor: pointer; font-size: 14px; padding: 0;">Skip the question (Пропустить вопрос)</button>
         <button id="next-btn" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;">Next Question</button>
       </div>
     </div>
 
+    <!-- Results Container -->
     <div id="results-container" class="hidden" style="text-align: center; padding: 20px 0;">
       <div style="text-align: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
         <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Study English with Julia Semikolenova" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;" onerror="this.src='https://placehold.co/600x250/ffffff/3B3E8C?text=Julia+Semikolenova'">
@@ -138,7 +183,6 @@
         { "section": "Vocabulary Section", "question": "23. (Кому он написал это письмо?) Who _______ this letter to? (1-3 words)", "points": 3, "isTextInput": true, "correctAnswer": "did he write" },
         { "section": "Vocabulary Section", "question": "24. (Я собираюсь прочитать эту книгу.) I _______ to read this book. (1-3 words)", "points": 2, "isTextInput": true, "correctAnswer": "am going" },
         { "section": "Vocabulary Section", "question": "25. (Эта книга была написана 2 года назад.) This book _______ two years ago. (1-3 words)", "points": 2, "isTextInput": true, "correctAnswer": "was written" },
-
         { "section": "Grammar Section", "question": "26. She sells clothes. She’s a _________.", "points": 1, "answerOptions": [{ "text": "travel agent", "isCorrect": false }, { "text": "shop assistant", "isCorrect": true }, { "text": "teacher", "isCorrect": false }, { "text": "driver", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "27. My son goes to school. He is ___________ years old.", "points": 1, "answerOptions": [{ "text": "thirty", "isCorrect": false }, { "text": "twenty", "isCorrect": false }, { "text": "thirteen", "isCorrect": true }, { "text": "eighty", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "28. I always go to the cinema _______ Fridays.", "points": 1, "answerOptions": [{ "text": "in", "isCorrect": false }, { "text": "on", "isCorrect": true }, { "text": "at", "isCorrect": false }, { "text": "of", "isCorrect": false }] },
@@ -149,12 +193,12 @@
         { "section": "Grammar Section", "question": "33. My sister___________ the cooking in our house.", "points": 1, "answerOptions": [{ "text": "makes", "isCorrect": false }, { "text": "does", "isCorrect": true }, { "text": "cooks", "isCorrect": false }, { "text": "has", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "34. Try not to worry ____________ it any more. Everything will be fine.", "points": 1, "answerOptions": [{ "text": "of", "isCorrect": false }, { "text": "for", "isCorrect": false }, { "text": "by", "isCorrect": false }, { "text": "about", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "35. Sally __________ a lot of money, her new job is much better paid than the old one.", "points": 1, "answerOptions": [{ "text": "earns", "isCorrect": true }, { "text": "does", "isCorrect": false }, { "text": "wins", "isCorrect": false }, { "text": "takes", "isCorrect": false }] },
-        { "section": "Grammar Section", "question": "36. Surgeons mustn't  ______________ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
+        { "section": "Grammar Section", "question": "36. Surgeons mustn't   ______________ mistakes.", "points": 1, "answerOptions": [{ "text": "do", "isCorrect": false }, { "text": "hate", "isCorrect": false }, { "text": "have", "isCorrect": false }, { "text": "make", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "37. He hates flying. That’s why he never travels ______.", "points": 1, "answerOptions": [{ "text": "by train", "isCorrect": false }, { "text": "by plane", "isCorrect": true }, { "text": "by ferry", "isCorrect": false }, { "text": "on foot", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "38. People ___________ Kate for her beauty and talent.", "points": 1, "answerOptions": [{ "text": "see", "isCorrect": false }, { "text": "look", "isCorrect": false }, { "text": "admire", "isCorrect": true }, { "text": "imagine", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "39. __________ you have to travel a lot next morning, try to get to bed earlier than usually.", "points": 1, "answerOptions": [{ "text": "Until", "isCorrect": false }, { "text": "If", "isCorrect": true }, { "text": "After", "isCorrect": false }, { "text": "Till", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "40. Can you ________ me this book?", "points": 1, "answerOptions": [{ "text": "borrow", "isCorrect": false }, { "text": "owe", "isCorrect": false }, { "text": "rent", "isCorrect": false }, { "text": "lend", "isCorrect": true }] },
-        { "section": "Grammar Section", "question": "41. I’d be really  _____________ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
+        { "section": "Grammar Section", "question": "41. I’d be really   _____________ if you could send me some more information.", "points": 2, "answerOptions": [{ "text": "truthful", "isCorrect": false }, { "text": "grateful", "isCorrect": true }, { "text": "helpful", "isCorrect": false }, { "text": "faithful", "isCorrect": false }] },
         { "section": "Grammar Section", "question": "42. It was a great meal, but pretty expensive. Just look at the _____________.", "points": 2, "answerOptions": [{ "text": "ticket", "isCorrect": false }, { "text": "invoice", "isCorrect": false }, { "text": "recipe", "isCorrect": false }, { "text": "bill", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "43. You know, if you come late once again, I’ll ___________ you!", "points": 2, "answerOptions": [{ "text": "hire", "isCorrect": false }, { "text": "employ", "isCorrect": false }, { "text": "promote", "isCorrect": false }, { "text": "fire", "isCorrect": true }] },
         { "section": "Grammar Section", "question": "44. My dad ____________ me to go ahead with my idea.", "points": 2, "answerOptions": [{ "text": "said", "isCorrect": false }, { "text": "suggested", "isCorrect": false }, { "text": "encouraged", "isCorrect": true }, { "text": "claimed", "isCorrect": false }] },
@@ -173,14 +217,22 @@
     let timerInterval = null;
 
     const candidateFormContainer = document.getElementById('candidate-form-container');
+    const introSlide1 = document.getElementById('intro-slide-1');
+    const introSlide2 = document.getElementById('intro-slide-2');
     const startTestBtn = document.getElementById('start-test-btn');
+    const introNext1 = document.getElementById('intro-next-1');
+    const introNext2 = document.getElementById('intro-next-2');
+
     const candidateNameInput = document.getElementById('candidate-name');
     const candidateEmailInput = document.getElementById('candidate-email');
     const candidatePhoneInput = document.getElementById('candidate-phone');
     const candidateGoalInput = document.getElementById('candidate-goal');
 
     const timeDisplay = document.getElementById('time-display');
+    const introTime1 = document.getElementById('intro-time-1');
+    const introTime2 = document.getElementById('intro-time-2');
     const quizTimeDisplay = document.getElementById('quiz-time-display');
+
     const questionCounter = document.getElementById('question-counter');
     const questionPoints = document.getElementById('question-points');
     const sectionBadge = document.getElementById('section-badge');
@@ -194,7 +246,6 @@
     const resultsContainer = document.getElementById('results-container');
     const emailStatus = document.getElementById('email-status');
     const retryEmailBtn = document.getElementById('retry-email-btn');
-
     const customModal = document.getElementById('custom-modal');
     const modalMessage = document.getElementById('modal-message');
     const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -203,7 +254,6 @@
       if (modalMessage) modalMessage.textContent = message;
       if (customModal) customModal.classList.remove('hidden');
     }
-
     if (modalCloseBtn) {
       modalCloseBtn.onclick = (e) => {
         e.preventDefault();
@@ -218,27 +268,30 @@
         const email = candidateEmailInput ? candidateEmailInput.value.trim() : '';
         const phone = candidatePhoneInput ? candidatePhoneInput.value.trim() : '';
         const goal = candidateGoalInput ? candidateGoalInput.value.trim() : '';
-
         if (!name || !email || !phone) {
           showModal('Please fill in all required fields (Name, Email, and Phone number) to start.');
           return;
         }
-
-        const lastAttemptTime = localStorage.getItem('test_attempt_' + email);
-        const now = new Date().getTime();
-        const hours24 = 24 * 60 * 60 * 1000;
-        
-        if (lastAttemptTime && (now - lastAttemptTime < hours24)) {
-          showModal('Данный email уже использовался для прохождения теста за последние сутки. Пожалуйста, попробуйте позже.');
-          return;
-        }
-
-        localStorage.setItem('test_attempt_' + email, now);
-
-        candidateInfo = { name, email, phone, goal: goal || 'Не указано' };
+        candidateInfo = { name, email, phone, goal: goal || 'Not specified' };
         if (candidateFormContainer) candidateFormContainer.classList.add('hidden');
-        if (quizContainer) quizContainer.classList.remove('hidden');
+        if (introSlide1) introSlide1.classList.remove('hidden');
         startTimer();
+      };
+    }
+
+    if (introNext1) {
+      introNext1.onclick = function(e) {
+        e.preventDefault();
+        if (introSlide1) introSlide1.classList.add('hidden');
+        if (introSlide2) introSlide2.classList.remove('hidden');
+      };
+    }
+
+    if (introNext2) {
+      introNext2.onclick = function(e) {
+        e.preventDefault();
+        if (introSlide2) introSlide2.classList.add('hidden');
+        if (quizContainer) quizContainer.classList.remove('hidden');
         loadQuestion();
       };
     }
@@ -255,6 +308,8 @@
         const seconds = timeLeft % 60;
         const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         if (timeDisplay) timeDisplay.textContent = formattedTime;
+        if (introTime1) introTime1.textContent = formattedTime;
+        if (introTime2) introTime2.textContent = formattedTime;
         if (quizTimeDisplay) quizTimeDisplay.textContent = formattedTime;
       }, 1000);
     }
@@ -262,13 +317,11 @@
     function loadQuestion() {
       selectedOptionIndex = null;
       if (userTextAnswer) userTextAnswer.value = '';
-
       const q = quizData.questions[currentQuestionIndex];
       if (questionCounter) questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.questions.length}`;
       if (questionPoints) questionPoints.textContent = `${q.points} Point${q.points > 1 ? 's' : ''} (${q.points} ${q.points === 1 ? 'балл' : 'балла'})`;
       if (sectionBadge) sectionBadge.textContent = q.section || "General Assessment";
       if (questionText) questionText.textContent = q.question;
-
       if (nextBtn) {
         if (currentQuestionIndex === quizData.questions.length - 1) {
           nextBtn.textContent = "Submit test";
@@ -276,7 +329,6 @@
           nextBtn.textContent = "Next Question";
         }
       }
-
       if (q.isTextInput) {
         if (optionsList) optionsList.classList.add('hidden');
         if (textInputContainer) textInputContainer.classList.remove('hidden');
@@ -307,38 +359,74 @@
 
     if (skipBtn) {
       skipBtn.onclick = () => {
-        recordAnswer(null, false, "Skipped");
-        proceedNext();
+        const isLastQuestion = (currentQuestionIndex === quizData.questions.length - 1);
+        if (isLastQuestion) {
+          const q = quizData.questions[currentQuestionIndex];
+          if (q.isTextInput) {
+            const userTyped = userTextAnswer ? userTextAnswer.value.trim() : '';
+            if (userTyped) {
+              const cleanUser = userTyped.toLowerCase().replace(/\s+/g, ' ');
+              const cleanCorrect = q.correctAnswer.toLowerCase().replace(/\s+/g, ' ');
+              const isCorrect = (cleanUser === cleanCorrect);
+              if (isCorrect) earnedPoints += q.points;
+              recordAnswer(userTyped, isCorrect, userTyped);
+            } else {
+              recordAnswer(null, false, "Skipped");
+            }
+          } else {
+            if (selectedOptionIndex !== null) {
+              const chosenOption = q.answerOptions[selectedOptionIndex];
+              const isCorrect = chosenOption.isCorrect;
+              if (isCorrect) earnedPoints += q.points;
+              recordAnswer(chosenOption.text, isCorrect, chosenOption.text);
+            } else {
+              recordAnswer(null, false, "Skipped");
+            }
+          }
+          finishTest();
+        } else {
+          recordAnswer(null, false, "Skipped");
+          proceedNext();
+        }
       };
     }
 
     if (nextBtn) {
       nextBtn.onclick = () => {
         const q = quizData.questions[currentQuestionIndex];
-
+        const isLastQuestion = (currentQuestionIndex === quizData.questions.length - 1);
         if (q.isTextInput) {
           const userTyped = userTextAnswer ? userTextAnswer.value.trim() : '';
-          if (!userTyped) {
+          if (!userTyped && !isLastQuestion) {
             showModal('Please enter your answer or click Skip.');
             return;
           }
-          const cleanUser = userTyped.toLowerCase().replace(/\s+/g, ' ');
-          const cleanCorrect = q.correctAnswer.toLowerCase().replace(/\s+/g, ' ');
-          const isCorrect = (cleanUser === cleanCorrect);
-
-          if (isCorrect) earnedPoints += q.points;
-          recordAnswer(userTyped, isCorrect, userTyped);
-          proceedNext();
+          if (userTyped) {
+            const cleanUser = userTyped.toLowerCase().replace(/\s+/g, ' ');
+            const cleanCorrect = q.correctAnswer.toLowerCase().replace(/\s+/g, ' ');
+            const isCorrect = (cleanUser === cleanCorrect);
+            if (isCorrect) earnedPoints += q.points;
+            recordAnswer(userTyped, isCorrect, userTyped);
+          } else {
+            recordAnswer(null, false, "Skipped");
+          }
         } else {
-          if (selectedOptionIndex === null) {
+          if (selectedOptionIndex === null && !isLastQuestion) {
             showModal('Please select an option or click Skip.');
             return;
           }
-          const chosenOption = q.answerOptions[selectedOptionIndex];
-          const isCorrect = chosenOption.isCorrect;
-
-          if (isCorrect) earnedPoints += q.points;
-          recordAnswer(chosenOption.text, isCorrect, chosenOption.text);
+          if (selectedOptionIndex !== null) {
+            const chosenOption = q.answerOptions[selectedOptionIndex];
+            const isCorrect = chosenOption.isCorrect;
+            if (isCorrect) earnedPoints += q.points;
+            recordAnswer(chosenOption.text, isCorrect, chosenOption.text);
+          } else {
+            recordAnswer(null, false, "Skipped");
+          }
+        }
+        if (isLastQuestion) {
+          finishTest();
+        } else {
           proceedNext();
         }
       };
@@ -371,7 +459,6 @@
         emailStatus.style.color = "#3B3E8C";
       }
       if (retryEmailBtn) retryEmailBtn.classList.add('hidden');
-
       if (typeof emailjs !== 'undefined') {
         emailjs.send('service_hyk2n8y', 'template_p98ulua', templateParams)
           .then((response) => {
@@ -402,9 +489,10 @@
 
     function finishTest() {
       if (timerInterval) clearInterval(timerInterval);
+      if (introSlide1) introSlide1.classList.add('hidden');
+      if (introSlide2) introSlide2.classList.add('hidden');
       if (quizContainer) quizContainer.classList.add('hidden');
       if (resultsContainer) resultsContainer.classList.remove('hidden');
-
       let levelTitle = "";
       const percentage = (earnedPoints / totalPossiblePoints) * 100;
       
@@ -419,36 +507,32 @@
       } else {
         levelTitle = "Starter";
       }
-
       let detailedLogString = userAnswersLog.map(log => 
-        `Q${log.questionNumber} [Вес: ${log.maxPoints}]: ${log.question}\nОтвет: ${log.userAnswer} [${log.isCorrect ? 'Верно ✅' : 'Неверно ❌'}] (${log.pointsAwarded}/${log.maxPoints} баллов)`
+        `Q${log.questionNumber} [Вес: ${log.maxPoints}]: ${log.question}\nAnswer: ${log.userAnswer} [${log.isCorrect ? 'Correct ✅' : 'Incorrect ❌'}] (${log.pointsAwarded}/${log.maxPoints} pts)`
       ).join('\n\n');
-
-      const messageBody = `Новый результат тестирования:
-
-ИНФОРМАЦИЯ ОБ УЧЕНИКЕ:
-ФИО: ${candidateInfo.name}
-Email: ${candidateInfo.email}
+      const messageBody = `Новый результат прохождения теста!
+Имя и фамилия: ${candidateInfo.name}
+Почта: ${candidateInfo.email}
 Телефон: ${candidateInfo.phone}
-Класс и возраст: ${candidateInfo.goal}
-
-РЕЗУЛЬТАТЫ:
-Баллы: ${earnedPoints} из ${totalPossiblePoints} (${percentage.toFixed(1)}%)
-Уровень: ${levelTitle}
-
-ДЕТАЛИ ОТВЕТОВ:
+Класс/возраст: ${candidateInfo.goal}
+Определенный уровень: ${levelTitle}
+Общий балл: ${earnedPoints} / ${totalPossiblePoints}
+---
+Детальные ответы по каждому вопросу с указанием веса:
 ${detailedLogString}`;
-
       const templateParams = {
+        to_email: "juliasemikolenova@gmail.com",
+        name: candidateInfo.name,
+        email: candidateInfo.email,
         candidate_name: candidateInfo.name,
         candidate_email: candidateInfo.email,
         candidate_phone: candidateInfo.phone,
         candidate_goal: candidateInfo.goal,
-        score: earnedPoints,
-        level: levelTitle,
+        total_score: `${earnedPoints} / ${totalPossiblePoints}`,
+        proficiency_level: levelTitle,
+        detailed_answers: detailedLogString,
         message: messageBody
       };
-
       sendEmailWithParams(templateParams);
     }
   </script>
