@@ -270,7 +270,7 @@
         candidateInfo = { name, email, phone, goal: goal || 'Not specified' };
         if (candidateFormContainer) candidateFormContainer.classList.add('hidden');
         if (introSlide1) introSlide1.classList.remove('hidden');
-        startTimer();
+        // Timer removed from registration start; will start on slide 4 (first question)
       };
     }
 
@@ -287,11 +287,13 @@
         e.preventDefault();
         if (introSlide2) introSlide2.classList.add('hidden');
         if (quizContainer) quizContainer.classList.remove('hidden');
+        startTimer(); // Timer starts here when transitioning to the 4th slide (first question)
         loadQuestion();
       };
     }
 
     function startTimer() {
+      if (timerInterval) return; // Prevent multiple intervals
       timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
           clearInterval(timerInterval);
