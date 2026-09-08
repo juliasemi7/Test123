@@ -30,6 +30,8 @@
     .modal-card { background: white; padding: 24px; border-radius: 14px; max-width: 380px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center; }
     .corner-logos { position: absolute; top: 16px; right: 16px; display: flex; gap: 8px; align-items: center; z-index: 10; }
     .corner-logos img { height: 28px; width: auto; object-fit: contain; }
+    .corner-left-logo { position: absolute; top: 16px; left: 16px; z-index: 10; }
+    .corner-left-logo img { width: 93px; height: auto; object-fit: contain; display: block; }
   </style>
 </head>
 <body>
@@ -66,20 +68,16 @@
 
     <!-- Intro Slide 1 Container -->
     <div id="intro-slide-1" class="hidden">
-      <div class="header" style="margin-bottom: 16px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 100%; height: auto;" onerror="this.style.display='none'">
-        </div>
+      <div class="corner-left-logo">
+        <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" onerror="this.style.display='none'">
+      </div>
+      <div class="header" style="margin-bottom: 16px; margin-top: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;"></div>
         <div class="timer" id="intro-time-1" style="font-size: 16px; padding: 6px 12px;">30:00</div>
       </div>
-      <div class="section-title">Introduction / Инструкция 1</div>
-      <h2 style="font-size: 18px; margin-bottom: 16px;">Welcome to the Assessment</h2>
       <div style="text-align: center; margin-bottom: 20px;">
         <img src="https://github.com/juliasemi7/Test123/blob/main/1ChatGPT%20Image%209%20%D1%81%D0%B5%D0%BD%D1%82.%202026%20%D0%B3.,%2001_11_03.png?raw=true" alt="Intro Slide 1" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; max-height: 400px; object-fit: contain;" onerror="this.src='https://placehold.co/600x400/e2e8f0/3B3E8C?text=Instruction+Image+1'">
       </div>
-      <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
-        Please read each question carefully and select the right option or write your short answer. You can skip questions if needed.
-      </p>
       <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
         <button id="intro-next-1" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;">Next Slide</button>
       </div>
@@ -87,20 +85,16 @@
 
     <!-- Intro Slide 2 Container -->
     <div id="intro-slide-2" class="hidden">
-      <div class="header" style="margin-bottom: 16px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 100%; height: auto;" onerror="this.style.display='none'">
-        </div>
+      <div class="corner-left-logo">
+        <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" onerror="this.style.display='none'">
+      </div>
+      <div class="header" style="margin-bottom: 16px; margin-top: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;"></div>
         <div class="timer" id="intro-time-2" style="font-size: 16px; padding: 6px 12px;">30:00</div>
       </div>
-      <div class="section-title">Introduction / Инструкция 2</div>
-      <h2 style="font-size: 18px; margin-bottom: 16px;">Get Ready to Start</h2>
       <div style="text-align: center; margin-bottom: 20px;">
         <img src="https://github.com/juliasemi7/Test123/blob/main/2ChatGPT%20Image%209%20%D1%81%D0%B5%D0%BD%D1%82.%202026%20%D0%B3.,%2001_11_03.png?raw=true" alt="Intro Slide 2" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; max-height: 400px; object-fit: contain;" onerror="this.src='https://placehold.co/600x400/e2e8f0/3B3E8C?text=Instruction+Image+2'">
       </div>
-      <p style="color: #64748b; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
-        Once you proceed, the test questions will begin. Good luck with your level assessment!
-      </p>
       <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
         <button id="intro-next-2" class="btn" type="button" style="width: auto; margin: 0; padding: 10px 24px;">Start Questions</button>
       </div>
@@ -108,10 +102,11 @@
 
     <!-- Quiz Container -->
     <div id="quiz-container" class="hidden">
-      <div class="header" style="margin-bottom: 16px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" style="max-width: 90px; width: 30% !important; height: auto; display: inline-block;" onerror="this.style.display='none'">
-        </div>
+      <div class="corner-left-logo">
+        <img src="https://raw.githubusercontent.com/juliasemi7/Test123/main/julia_semikolenova_logo_vector_print_redAT%20%282%29.png?raw=true" alt="Logo" onerror="this.style.display='none'">
+      </div>
+      <div class="header" style="margin-bottom: 16px; margin-top: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;"></div>
         <div class="timer" id="quiz-time-display" style="font-size: 16px; padding: 6px 12px;">30:00</div>
       </div>
       <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; color: #3B3E8C; margin-bottom: 8px; text-transform: uppercase;">
